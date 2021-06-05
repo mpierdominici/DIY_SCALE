@@ -3,55 +3,67 @@
 #include <LiquidCrystal_I2C.h>
 #include "HX711.h"
 
-const int DOUT=A1;
-const int CLK=A0;
+#define SCALE_GAIN 2012722.58
+#define I2C_LCD_ADRES 0x27
+
+#define DOUT A1
+#define CLK A0
+
+#define NUMERO_DE_MUESTRAS_TARA 20
+#define NUMERO_DE_MUESTRAS_PESO 3
+
+#define PIN_TARA 8
 
 HX711 balanza;
 //Crear el objeto lcd  dirección  0x3F y 16 columnas x 2 filas
-LiquidCrystal_I2C lcd(0x27,16,2);  //
-
+LiquidCrystal_I2C lcd(I2C_LCD_ADRES,16,2);  //
+void printWeigth(void);
+void setTara(void);
+void setScale(void);
 void setup() {
-  // Inicializar el LCD
   lcd.init();
-  
-  //Encender la luz de fondo.
   lcd.backlight();
-  
-  // Escribimos el Mensaje en el LCD.
-  //lcd.print("Hola Mundo");
-
-
-  // Serial.begin(9600);
   balanza.begin(DOUT, CLK);
-  //Serial.print("Lectura del valor del ADC:  ");
-  //Serial.println(balanza.read());
-  //Serial.println("No ponga ningun  objeto sobre la balanza");
-  lcd.print("Destarando...");
-  //Serial.println("...");
-  balanza.set_scale(2012722.58); // Establecemos la escala
-  balanza.tare(20);  //El peso actual es considerado Tara.
-  lcd.clear();
-  //Serial.println("Listo para pesar");  
-
-  
+  setScale();
+  setTara();
+  pinMode(PIN_TARA,INPUT_PULLUP);
 }
-int pesoTemp=0;
+
 void loop() {
-  
-  lcd.setCursor(0,0);
-  lcd.print("Matilanza");
-   // Ubicamos el cursor en la primera posición(columna:0) de la segunda línea(fila:1)
+  printWeigth();
+  delay(500);
+  if(!digitalRead(PIN_TARA)){
+      setTara();
+  }
+}
+
+bool printWeigthOnce=false;
+void printWeigth(void){
+  static int pesoTemp=0;
+  if(!printWeigthOnce){
+    printWeigthOnce=!printWeigthOnce;
+    lcd.clear();
+    //Serial.println("Listo para pesar");  
+    lcd.setCursor(0,0);
+    lcd.print("Matilanza");
+  }
   lcd.setCursor(0, 1);
    // Escribimos el número de segundos trascurridos
-  lcd.print(pesoTemp);
-  lcd.print(" g");
-  delay(100);
-  pesoTemp=int(balanza.get_units(20)*1000);
-  lcd.clear();
-  //Serial.print("Peso: ");
-  //Serial.print(balanza.get_units(20),3);
-  //Serial.println(" kg");
-  //delay(500);
+ pesoTemp=int(balanza.get_units(NUMERO_DE_MUESTRAS_PESO)*1000);
+ lcd.print(pesoTemp);
+ lcd.print(" g    ");
+ 
+}
 
-  
+void setTara(void){
+  lcd.clear();
+  lcd.print("Destarando...");
+  balanza.tare(NUMERO_DE_MUESTRAS_TARA);  //El peso actual es considerado Tara.
+  printWeigthOnce=false;
+  lcd.clear();
+
+}
+
+void setScale(void){
+   balanza.set_scale(SCALE_GAIN); // Establecemos la escala
 }
