@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=rx Pin=J4-3
+Removed Pin From Net: NetName=tx Pin=J4-4
+Added Pin To Net: NetName=tx Pin=J4-3
+Added Pin To Net: NetName=rx Pin=J4-4
+Added Room: Name=esquematico

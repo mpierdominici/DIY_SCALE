@@ -1,0 +1,87 @@
+Added Component: Designator=C1(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C2(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C4(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C?(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J1(SIP4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J2(SIP2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J3(SIP4)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J4(SIP5)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J5(BORNERA2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1(RES400)
+Add component. Clean all parameters for all variants
+Added Component: Designator=U(DIP254P762X457-28)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "ATMEGA328P-PU"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "PDIP-28 Microchip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ATMEGA328P-PU/Microchip/view-part/649476/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Y1(CRISTAL PERFIL)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetC1_1 Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=NetC4_1 Pin=C4-1
+Added Pin To Net: NetName=reset Pin=C4-2
+Added Pin To Net: NetName=+5 Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=+5 Pin=J1-2
+Added Pin To Net: NetName=sda Pin=J1-3
+Added Pin To Net: NetName=scl Pin=J1-4
+Added Pin To Net: NetName=GND Pin=J2-1
+Added Pin To Net: NetName=d8 Pin=J2-2
+Added Pin To Net: NetName=GND Pin=J3-1
+Added Pin To Net: NetName=a1 Pin=J3-2
+Added Pin To Net: NetName=a0 Pin=J3-3
+Added Pin To Net: NetName=+5 Pin=J3-4
+Added Pin To Net: NetName=GND Pin=J4-1
+Added Pin To Net: NetName=+5 Pin=J4-2
+Added Pin To Net: NetName=rx Pin=J4-3
+Added Pin To Net: NetName=tx Pin=J4-4
+Added Pin To Net: NetName=reset Pin=J4-5
+Added Pin To Net: NetName=+5 Pin=J5-1
+Added Pin To Net: NetName=GND Pin=J5-2
+Added Pin To Net: NetName=NetC4_1 Pin=R1-1
+Added Pin To Net: NetName=+5 Pin=R1-2
+Added Pin To Net: NetName=NetC4_1 Pin=U-1
+Added Pin To Net: NetName=rx Pin=U-2
+Added Pin To Net: NetName=tx Pin=U-3
+Added Pin To Net: NetName=+5 Pin=U-7
+Added Pin To Net: NetName=GND Pin=U-8
+Added Pin To Net: NetName=NetC1_1 Pin=U-9
+Added Pin To Net: NetName=NetC2_1 Pin=U-10
+Added Pin To Net: NetName=d8 Pin=U-14
+Added Pin To Net: NetName=+5 Pin=U-20
+Added Pin To Net: NetName=GND Pin=U-22
+Added Pin To Net: NetName=a0 Pin=U-23
+Added Pin To Net: NetName=a1 Pin=U-24
+Added Pin To Net: NetName=sda Pin=U-27
+Added Pin To Net: NetName=scl Pin=U-28
+Added Pin To Net: NetName=NetC1_1 Pin=Y1-1
+Added Pin To Net: NetName=NetC2_1 Pin=Y1-2
+Added Member To Class: ClassName=esquematico Member=Component C1 22p
+Added Member To Class: ClassName=esquematico Member=Component C2 22p
+Added Member To Class: ClassName=esquematico Member=Component C4 CAP
+Added Member To Class: ClassName=esquematico Member=Component C? 100n
+Added Member To Class: ClassName=esquematico Member=Component J1 Pantalla
+Added Member To Class: ClassName=esquematico Member=Component J2 BotonTara
+Added Member To Class: ClassName=esquematico Member=Component J3 CON4
+Added Member To Class: ClassName=esquematico Member=Component J4 Prog
+Added Member To Class: ClassName=esquematico Member=Component J5 Alimentacion
+Added Member To Class: ClassName=esquematico Member=Component R1 10k
+Added Member To Class: ClassName=esquematico Member=Component U ATMEGA328P-PU
+Added Member To Class: ClassName=esquematico Member=Component Y1 16Mhz
+Added Room: Name=esquematico
